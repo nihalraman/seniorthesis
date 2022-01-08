@@ -1,5 +1,4 @@
 for file in /Users/nraman/Documents/thesis_videos/*.MOV
 do
-	
-	python facemesh_extract.py "$file"
+    python facemesh_extract.py "$file"
 done
