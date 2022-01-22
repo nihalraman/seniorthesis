@@ -1,4 +1,4 @@
-for file in /Users/nraman/Documents/thesis_videos/*.MOV
+for file in /Users/nraman/Documents/thesis_videos/*.mp4
 do
     python facemesh_extract.py "$file"
 done
