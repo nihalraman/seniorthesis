@@ -22,7 +22,7 @@ vid_len = 2.5
 #     name = random.randint(0, 1000)
 #     name = str(name)
 
-name = "auto_videos"
+name = "auto_videos_temp"
 print("All logs saved in dir:", name)
 #os.mkdir(name)
 
