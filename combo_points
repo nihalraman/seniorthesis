@@ -1,0 +1,4 @@
+rm /Users/nraman/Documents/GitHub/seniorthesis/auto_videos_temp/*
+python single_video.py test
+python print_arg.py test
+

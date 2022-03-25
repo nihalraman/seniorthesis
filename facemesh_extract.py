@@ -7,6 +7,7 @@ import numpy as np
 import sys, getopt, os
 
 path = sys.argv[1]
+print(path)
 
 num_landmarks = 468
 

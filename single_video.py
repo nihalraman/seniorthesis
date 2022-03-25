@@ -9,6 +9,8 @@ import sys
 import datetime
 
 
+vidname = sys.argv[1]
+
 fps = 30
 # width = 915
 # height = 1626
@@ -35,7 +37,7 @@ cur_dir = os.path.dirname(os.path.abspath(sys.argv[0]))
 
 
 start = time.time()
-video_file = os.path.join(name, str(datetime.datetime.now()) + ".mp4")
+video_file = os.path.join(name, vidname + ".mp4")
 print("Capture video saved location : {}".format(video_file))
 
 # Create a video write before entering the loop
@@ -49,11 +51,12 @@ while cap.isOpened():
     if ret == True:
         cv2.imshow("frame", frame)
         if time.time() - start > vid_len:
-            start = time.time()
-            video_file = os.path.join(name, str(datetime.datetime.now()) + ".mp4")
-            video_writer = cv2.VideoWriter(
-                video_file, video_codec, fps, (int(cap.get(3)), int(cap.get(4)))
-            )
+            cap.release()
+            # start = time.time()
+            # video_file = os.path.join(name, str(datetime.datetime.now()) + ".mp4")
+            # video_writer = cv2.VideoWriter(
+            #     video_file, video_codec, fps, (int(cap.get(3)), int(cap.get(4)))
+            # )
             # No sleeping! We don't want to sleep, we want to write
             # time.sleep(2.5)
 
@@ -64,7 +67,7 @@ while cap.isOpened():
     else:
         break
 
-cap.release()
+
 cv2.destroyAllWindows()
 
 
